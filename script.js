@@ -1,5 +1,6 @@
 function setup() {
 	createCanvas(500, 400);
+ 
 }
 
 var [xpos, ypos, xspeed, yspeed] = [225, 225, 0, 0];
@@ -12,9 +13,17 @@ function draw() {
 	
 	fill(0, 255, 0);
 	rect(xpos, ypos, 50, 50);
+  rect(80, 100, 50, 50);
 	
 	if(xpos >= 0 && xpos + 50 <= 500) xpos += xspeed;
 	if(ypos >= 0 && ypos + 50 <= 500) ypos += yspeed;
+
+  if (ypos > 80 && ypos < 130) {
+    if (xpos > 100 && xpos < 150) {
+      fill("red");
+    }
+  }
+
 }
 
 function keyPressed() {
